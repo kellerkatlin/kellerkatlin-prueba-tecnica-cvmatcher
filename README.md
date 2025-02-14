@@ -11,11 +11,15 @@ CV Matcher es una aplicación desarrollada en Angular 18 que simula un buscador 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/cv-matcher.git
+   git clone https://github.com/kellerkatlin/kellerkatlin-prueba-tecnica-cvmatcher.git
+   ```
+
+   Puedes acceder a la aplicación desplegada en la siguiente URL: [https://kellerkatlin-prueba-tecnica-cvmatcher.vercel.app/](https://kellerkatlin-prueba-tecnica-cvmatcher.vercel.app/)
+   git clone https://github.com/kellerkatlin/kellerkatlin-prueba-tecnica-cvmatcher.git
    ```
 2. Navega al directorio del proyecto:
    ```bash
-   cd cv-matcher
+   cd kellerkatlin-prueba-tecnica-cvmatcher.git
    ```
 3. Instala las dependencias:
    ```bash
