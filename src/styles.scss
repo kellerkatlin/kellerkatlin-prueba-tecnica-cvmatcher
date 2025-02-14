@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estiliza el ancho de la barra */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Estiliza el track (fondo de la barra de desplazamiento) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Estiliza el thumb (barra móvil de desplazamiento) */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+/* Cambia de color cuando el usuario pasa el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

@@ -1,0 +1,102 @@
+<div class="lg:relative flex items-center">
+  <div
+    class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:flex-1 items-center lg:h-14 lg:shadow-md lg:border rounded-lg bg-white w-full"
+  >
+    <div
+      class="border rounded-lg lg:border-none relative lg:ml-4 flex-1 flex items-center w-full"
+    >
+      <div class="absolute left-2 text-gray-400">
+        <svg
+          class="w-5 h-5 text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+          />
+        </svg>
+      </div>
+      <input
+        type="text"
+        class="w-full py-3 pl-10 pr-4 text-base focus:outline-none"
+        [(ngModel)]="title"
+        placeholder="Buscar empleo..."
+      />
+    </div>
+    <div class="w-px h-6 bg-gray-200 mx-1 hidden lg:block"></div>
+
+    <div
+      class="relative flex-1 rounded-lg border lg:border-none flex items-center w-full"
+    >
+      <div class="absolute left-3 text-gray-500">
+        <svg
+          class="w-5 h-5 text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          />
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+          />
+        </svg>
+      </div>
+      <input
+        type="text"
+        class="w-full py-3 pl-10 pr-4 text-base focus:outline-none"
+        [(ngModel)]="location"
+        placeholder="Lugar"
+      />
+    </div>
+    <button
+      class="w-full lg:w-auto mt-2 lg:mt-0 lg:mr-4 lg:h-3/6 px-8 py-3 flex items-center justify-center bg-blue-600 rounded-lg hover:bg-blue-400 text-white"
+      (click)="onSearch()"
+    >
+      <span class="font-bold font-mono"> Buscar</span>
+    </button>
+  </div>
+</div>
+
+<div class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
+  <select
+    [(ngModel)]="jobType"
+    (change)="onSearch()"
+    class="w-full lg:w-auto border rounded-lg p-2 shadow-md"
+  >
+    <option [ngValue]="null">🛠️ Tipo de empleo</option>
+    <option [ngValue]="1">Tiempo Completo</option>
+    <option [ngValue]="2">Medio Tiempo</option>
+    <option [ngValue]="3">Freelance</option>
+  </select>
+
+  <select
+    [(ngModel)]="experience"
+    (change)="onSearch()"
+    class="w-full lg:w-auto border rounded-lg p-2 shadow-md"
+  >
+    <option [ngValue]="null">📅 Experiencia</option>
+    <option [ngValue]="1">1 año</option>
+    <option [ngValue]="2">2 años</option>
+    <option [ngValue]="3">3+ años</option>
+  </select>
+</div>

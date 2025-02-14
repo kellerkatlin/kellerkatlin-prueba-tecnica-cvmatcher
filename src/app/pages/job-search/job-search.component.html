@@ -1,0 +1,60 @@
+<div
+  class="lg:max-w-5xl mx-auto my-2 mt-7- p-4 h-[97.75vh] flex flex-col bg-white"
+>
+  <app-job-filters
+    [title]="title"
+    [location]="location"
+    [jobType]="jobType"
+    [experience]="experience"
+    (search)="onFilterChange($event)"
+  ></app-job-filters>
+
+  @if (jobs.length > 0) {
+  <div class="flex flex-col lg:flex-row mt-4 lg:overflow-hidden">
+    <div class="w-full lg:w-5/12 h-full overflow-y-auto pr-4 lg:border-r p-2">
+      <div
+        class="flex items-center border border-gray-300 p-4 rounded-lg mb-4 bg-white shadow-md cursor-pointer"
+      >
+        <h3 class="text-sm pl-2">
+          <span class="font-bold text-sm">{{ jobs.length }}</span> empleos
+          encontrados
+        </h3>
+      </div>
+      @for (job of jobs; track job.job_id) {
+
+      <app-job-card [job]="job" (click)="selectJob(job)"></app-job-card>
+      }
+    </div>
+
+    <div
+      class="modal-scroll hidden lg:block w-full lg:w-7/12 h-full overflow-y-auto pl-4 p-2"
+    >
+      @if (selectedJob) {
+
+      <app-job-details [job]="selectedJob"></app-job-details>
+
+      } @else {
+      <p class="text-gray-500 text-center mt-10">
+        Selecciona un empleo para ver los detalles
+      </p>
+      }
+    </div>
+  </div>
+  } @else {
+  <p class="text-center text-gray-500">No se encontraron empleos</p>
+  } @if (selectedJob) {
+  <div
+    class="lg:hidden fixed bottom-0 left-0 w-full h-[80vh] bg-white shadow-xl rounded-t-xl transition-transform duration-300 flex flex-col"
+    [class.translate-y-full]="!isOpenModalMobile"
+  >
+    <div class="flex justify-between items-center p-4 border-b">
+      <h3 class="text-lg font-semibold">Detalles del empleo</h3>
+      <button class="text-gray-500" (click)="closeModal()">❌</button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-4">
+      <app-job-details [job]="selectedJob"></app-job-details>
+    </div>
+  </div>
+  }
+</div>

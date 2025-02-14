@@ -1,0 +1,169 @@
+@if (!isHidden) {
+<div class="bg-white p-6 shadow-lg border rounded-md">
+  <div class="flex flex-col w-full">
+    <div class="flex items-center w-full mb-4">
+      <div class="flex items-center size-28 mr-4">
+        @if (job.company_image) {
+        <img
+          [src]="job.company_image"
+          class="size-full rounded-md capitalize"
+          alt="{{ job.company.toLowerCase() }}"
+        />
+        } @else {
+        <svg
+          class="size-full text-gray-800/60"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+          />
+        </svg>
+        }
+      </div>
+      <div class="flex-1">
+        <h3 class="text-3xl font-bold text-gray-900 capitalize">
+          {{ job.title.toLowerCase() }}
+        </h3>
+        <p class="text-sm text-gray-600 capitalize mb-2">
+          {{ job.company.toLowerCase() }}
+        </p>
+        <p class="flex items-center text-sm text-gray-500 gap-2">
+          <svg
+            class="w-6 h-6 text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 10h16M8 14h8m-4-7V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+            />
+          </svg>
+          <span>Tiempo</span>
+        </p>
+        <p class="text-sm text-gray-500 flex items-center gap-2">
+          <svg
+            class="w-6 h-6 text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+            />
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+            />
+          </svg>
+          {{ job.location || "Ubicación no especificada" }}
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-row items-center justify-between">
+      <div class="text-xs text-gray-600 font-semibold mb-2">
+        Publicado el {{ dateFormat(job.posted_date) }}
+      </div>
+      <div class="flex items-center gap-2">
+        <div (click)="toggleFavorite()" class="cursor-pointer">
+          @if(isFavorite){
+          <svg
+            class="size-5 text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"
+            />
+          </svg>
+
+          } @else {
+          <svg
+            class="size-5 text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+            />
+          </svg>
+          }
+        </div>
+        <a
+          [href]="job.url"
+          target="_blank"
+          class="block text-white bg-blue-600 px-4 py-1 rounded-md text-center font-bold"
+        >
+          Ir a la oferta
+        </a>
+      </div>
+    </div>
+    <div class="w-full h-[1px] bg-gray-200 mx-1 hidden lg:block my-5"></div>
+    <div
+      class="bg-gray-300 text-sm font-semibold justify-center items-center flex py-3"
+    >
+      ANUNCIO
+    </div>
+    <h2 class="mt-2 mb-3 text-lg font-bold">Información del empleo</h2>
+    <div>
+      <p class="text-sm text-justify">{{ job.description }}</p>
+      <ul class="text-sm text-gray-600 mt-4">
+        <li><strong>Tipo de Moneda:</strong> {{ job.currency_type }}</li>
+        <li>
+          <strong>Años de Experiencia:</strong> {{ job.years_experience }} años
+        </li>
+        <li><strong>Seniority:</strong> {{ job.job_seniority_id }}</li>
+        <li><strong>Tipo de Empleo:</strong> {{ job.job_type_id }}</li>
+        <li><strong>Categoría:</strong> {{ job.job_category_id }}</li>
+        <li><strong>Modalidad:</strong> {{ job.work_modality_id }}</li>
+        <li><strong>Fuente de Empleo:</strong> {{ job.job_source_id }}</li>
+        <li><strong>Fecha de Expiración:</strong> {{ job.expiration_date }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="bg-white p-6 shadow-lg rounded-md text-center">
+  <p>🔒 Esta oferta está oculta</p>
+  <button (click)="toggleHidden()" class="mt-4 block text-blue-500">
+    🔓 Desbloquear
+  </button>
+</div>
+}
