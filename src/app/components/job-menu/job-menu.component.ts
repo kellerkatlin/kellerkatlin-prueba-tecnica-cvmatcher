@@ -1,13 +1,12 @@
 import { Component, ElementRef, HostListener, Input } from '@angular/core';
-import { JobService } from '../../jobs/services/job.service';
-import { Job } from '../../jobs/models/job.model';
+import { JobService } from '../../services/services/job.service';
+import { Job } from '../../entities/models/job.model';
 
 @Component({
   selector: 'app-job-menu',
   standalone: true,
   imports: [],
   templateUrl: './job-menu.component.html',
-  styleUrl: './job-menu.component.scss',
 })
 export class JobMenuComponent {
   @Input() isMenuOpen: boolean = false;

@@ -1,13 +1,12 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { Job } from '../../../jobs/models/job.model';
-import { JobService } from '../../../jobs/services/job.service';
+import { JobService } from '../../services/services/job.service';
+import { Job } from '../../entities/models/job.model';
 
 @Component({
   selector: 'app-job-details',
   standalone: true,
   imports: [],
   templateUrl: './job-details.component.html',
-  styleUrl: './job-details.component.scss',
 })
 export class JobDetailsComponent implements OnInit {
   @Input() job!: Job;

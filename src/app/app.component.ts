@@ -7,7 +7,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `<router-outlet></router-outlet>`,
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'cv-matcher';

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
-import { Job } from '../models/job.model';
+import { Job } from '../../entities/models/job.model';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +51,7 @@ export class JobService {
       )
     );
   }
+
   toggleHiddenJob(jobId: number) {
     const currentHiddenJobs = this._hiddenJobs.value;
     if (currentHiddenJobs.includes(jobId)) {

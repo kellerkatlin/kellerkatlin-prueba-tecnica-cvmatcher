@@ -1,15 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Job } from '../../jobs/models/job.model';
+import { Job } from '../../entities/models/job.model';
 import { CommonModule } from '@angular/common';
 import { JobMenuComponent } from '../job-menu/job-menu.component';
-import { JobService } from '../../jobs/services/job.service';
+import { JobService } from '../../services/services/job.service';
 
 @Component({
   selector: 'app-job-card',
   standalone: true,
   imports: [CommonModule, JobMenuComponent],
   templateUrl: './job-card.component.html',
-  styleUrl: './job-card.component.scss',
 })
 export class JobCardComponent implements OnInit {
   @Input() job!: Job;

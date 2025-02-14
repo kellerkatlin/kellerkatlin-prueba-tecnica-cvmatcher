@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './job-filters.component.html',
-  styleUrl: './job-filters.component.scss',
 })
 export class JobFiltersComponent {
   @Input() title: string = '';

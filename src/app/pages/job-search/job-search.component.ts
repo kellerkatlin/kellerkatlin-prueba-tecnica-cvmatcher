@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from '../../jobs/models/job.model';
-import { JobService } from '../../jobs/services/job.service';
+import { Job } from '../../entities/models/job.model';
+import { JobService } from '../../services/services/job.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { JobFiltersComponent } from '../../shared/job-filters/job-filters.component';
-import { JobCardComponent } from '../../shared/job-card/job-card.component';
-import { JobDetailsComponent } from '../../core/components/job-details/job-details.component';
+import { JobFiltersComponent } from '../../components/job-filters/job-filters.component';
+import { JobCardComponent } from '../../components/job-card/job-card.component';
+import { JobDetailsComponent } from '../../components/job-details/job-details.component';
 
 @Component({
   selector: 'app-job-search',
@@ -17,7 +17,6 @@ import { JobDetailsComponent } from '../../core/components/job-details/job-detai
     JobDetailsComponent,
   ],
   templateUrl: './job-search.component.html',
-  styleUrl: './job-search.component.scss',
 })
 export class JobSearchComponent implements OnInit {
   jobs: Job[] = [];

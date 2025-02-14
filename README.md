@@ -1,27 +1,61 @@
-# CvMatcher
+# CV Matcher
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+CV Matcher es una aplicación desarrollada en Angular 18 que simula un buscador de trabajo, permitiendo comparar currículums con descripciones de trabajo para encontrar la mejor coincidencia. Utiliza TailwindCSS para los estilos.
 
-## Development server
+## Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js (versión 12 o superior)
+- Angular CLI (versión 10 o superior)
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/cv-matcher.git
+   ```
+2. Navega al directorio del proyecto:
+   ```bash
+   cd cv-matcher
+   ```
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-## Build
+## Ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para ejecutar la aplicación en modo desarrollo, utiliza el siguiente comando:
 
-## Running unit tests
+```bash
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Luego, abre tu navegador y navega a `http://localhost:4200/`.
 
-## Running end-to-end tests
+## Construcción
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Para construir el proyecto para producción, utiliza el siguiente comando:
 
-## Further help
+```bash
+ng build
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Los archivos de salida se generarán en el directorio `dist/`.
+
+## Especificaciones
+
+- **Framework**: Angular 18
+- **Lenguaje**: TypeScript
+- **Estilos**: TailwindCSS
+- **Backend**: No incluido (solo frontend)
+- **Funcionalidades**:
+  - Busqueda de empleos
+  - Filtros
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.

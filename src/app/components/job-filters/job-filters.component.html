@@ -28,6 +28,7 @@
         class="w-full py-3 pl-10 pr-4 text-base focus:outline-none"
         [(ngModel)]="title"
         placeholder="Buscar empleo..."
+        (keyup.enter)="onSearch()"
       />
     </div>
     <div class="w-px h-6 bg-gray-200 mx-1 hidden lg:block"></div>
@@ -66,6 +67,7 @@
         class="w-full py-3 pl-10 pr-4 text-base focus:outline-none"
         [(ngModel)]="location"
         placeholder="Lugar"
+        (keyup.enter)="onSearch()"
       />
     </div>
     <button
@@ -83,7 +85,7 @@
     (change)="onSearch()"
     class="w-full lg:w-auto border rounded-lg p-2 shadow-md"
   >
-    <option [ngValue]="null">🛠️ Tipo de empleo</option>
+    <option [ngValue]="null">Tipo de empleo</option>
     <option [ngValue]="1">Tiempo Completo</option>
     <option [ngValue]="2">Medio Tiempo</option>
     <option [ngValue]="3">Freelance</option>
@@ -94,7 +96,7 @@
     (change)="onSearch()"
     class="w-full lg:w-auto border rounded-lg p-2 shadow-md"
   >
-    <option [ngValue]="null">📅 Experiencia</option>
+    <option [ngValue]="null">Experiencia</option>
     <option [ngValue]="1">1 año</option>
     <option [ngValue]="2">2 años</option>
     <option [ngValue]="3">3+ años</option>
