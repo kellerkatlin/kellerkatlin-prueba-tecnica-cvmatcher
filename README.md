@@ -15,13 +15,14 @@ CV Matcher es una aplicación desarrollada en Angular 18 que simula un buscador 
    ```
 
    Puedes acceder a la aplicación desplegada en la siguiente URL: [https://kellerkatlin-prueba-tecnica-cvmatcher.vercel.app/](https://kellerkatlin-prueba-tecnica-cvmatcher.vercel.app/)
+   ```
    git clone https://github.com/kellerkatlin/kellerkatlin-prueba-tecnica-cvmatcher.git
    ```
-2. Navega al directorio del proyecto:
+3. Navega al directorio del proyecto:
    ```bash
    cd kellerkatlin-prueba-tecnica-cvmatcher.git
    ```
-3. Instala las dependencias:
+4. Instala las dependencias:
    ```bash
    npm install
    ```
